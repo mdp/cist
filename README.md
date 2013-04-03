@@ -1,3 +1,13 @@
+TL;DR;
+
+Use curl to quickly send files to gist.
+
+    $ curl --data-binary @README.md http://cist.herokuapp.com/meread.md
+    # => https://gist.github.com/ed946bc6572be36f75e5
+
+Feel free to use my heroku hosted service, or run your own.
+
+
 # cist
 ## curl to gist
 ![cist](https://s3.amazonaws.com/img.mdp.im/cist.png)
@@ -12,8 +22,6 @@ cist does that.
 
 ### How
 
-    $ curl --data-binary @README.md http://cist.herokuapp.com/read.md
-    # => https://gist.github.com/32d1b11087f326a9653f
 
 ### Setup
 
