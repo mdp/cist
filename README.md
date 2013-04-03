@@ -22,6 +22,11 @@ cist does that.
 
 ### How
 
+The path becomes the file name. eg.
+
+    $ curl --data-binary @index.js http://cist.herokuapp.com/happy.js
+
+This will return a gist with a single file named 'happy.js' with the contents of index.js
 
 ### Setup
 
