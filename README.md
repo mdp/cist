@@ -12,7 +12,8 @@ cist does that.
 
 ### How
 
-    curl --data-binary @myfile.js -d http://cist.herokuapp.com/myfile.js
+    $ curl --data-binary @README.md http://cist.herokuapp.com/read.md
+    # => https://gist.github.com/32d1b11087f326a9653f
 
 ### Setup
 
