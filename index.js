@@ -9,7 +9,7 @@ function gistUrl(){
   var url = "https://api.github.com/gists";
   if(process.env['CLIENT_ID']){
     url = url + "?client_id=" +
-      process.env['CLIENT_ID'] + "&client_secret" +
+      process.env['CLIENT_ID'] + "&client_secret=" +
       process.env['CLIENT_SECRET'];
   }
   return url;
