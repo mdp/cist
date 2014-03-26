@@ -2,7 +2,7 @@ TL;DR;
 
 Use curl to quickly send files to gist.
 
-    $ curl --data-binary @README.md http://cist.herokuapp.com/meread.md
+    $ curl -T README.md http://cist.herokuapp.com
     # => https://gist.github.com/ed946bc6572be36f75e5
 
 Feel free to use my heroku hosted service, or run your own.
@@ -24,9 +24,9 @@ cist does that.
 
 The path becomes the file name. eg.
 
-    $ curl --data-binary @index.js http://cist.herokuapp.com/happy.js
+    $ curl -T index.js http://cist.herokuapp.com
 
-This will return a gist with a single file named 'happy.js' with the contents of index.js
+This will return a gist with a single file named 'index.js' with the contents of index.js
 
 ### Setup
 
