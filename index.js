@@ -23,7 +23,7 @@ function createGist(content, fileName, callback) {
     }
   };
   var headers = {
-    "User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"
+    "User-Agent": "Cist Tool: github.com/mdp/cist - Mark Percival<m@mdp.im>"
   }
   json['files'][fileName] = {
     "content": content
