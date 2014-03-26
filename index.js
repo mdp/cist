@@ -30,7 +30,7 @@ function createGist(content, fileName, callback) {
   };
   console.log(content);
   request.post(gistUrl(), {json:json, headers:headers}, function(err, res, body){
-    callback(err, body);
+    callback(err, res, body);
   });
 }
 
@@ -44,9 +44,15 @@ function saveFile(request, response) {
     content = content + chunk;
   });
   request.on('end',function(){
-    createGist(content, fileName, function(err, resp){
-      console.log(resp);
-      response.send(resp['html_url'] + "\n");
+    createGist(content, fileName, function(err, resp, body){
+      if (err) {
+        response.send("Got an error trying to connect with Github, sorry.\n");
+      } else if (resp.statusCode != 200) {
+        response.send("Error: " + resp.statusCode + " - " + body + "\n");
+      } else {
+        console.log(body);
+        response.send(body['html_url'] + "\n");
+      }
     });
   });
 }
