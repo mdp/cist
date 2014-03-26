@@ -61,7 +61,7 @@ function saveFile(request, response) {
 }
 
 app.get('/', function(request, response) {
-  response.send('Cist!');
+  response.send('curl + gist = cist! Find out more at <a href="https://github.com/mdp/cist">mdp/cist on Github</a>');
 });
 
 app.post('*', saveFile);
