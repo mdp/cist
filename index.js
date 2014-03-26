@@ -47,10 +47,13 @@ function saveFile(request, response) {
     createGist(content, fileName, function(err, resp, body){
       if (err) {
         response.send("Got an error trying to connect with Github, sorry.\n");
-      } else if (resp.statusCode != 200) {
-        response.send("Error: " + resp.statusCode + " - " + body + "\n");
-      } else {
+      } else if (resp.statusCode !== 201) {
         console.log(body);
+        response.send("Error creating gist: " + JSON.stringify(body));
+      } else {
+        console.log(resp.headers);
+        console.log(body);
+        response.setHeader('x-ratelimit-remaining', resp.headers['x-ratelimit-remaining']);
         response.send(body['html_url'] + "\n");
       }
     });
