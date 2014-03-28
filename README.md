@@ -22,13 +22,14 @@ cist does that.
 
 ### How
 
-The path becomes the file name. eg.
+Curl the file you want to gist
 
     $ curl -sT index.js cist.mdp.im
+    # => https://gist.github.com/ed946bc6572be36f75e5
 
-This will return a gist with a single file named 'index.js' with the contents of index.js
+This will return a gist URL with a single file named 'index.js' with the contents of index.js
 
-### Setup
+### Run your own 'cist' server
 
 It's designed to run on Heroku. Run it on Heroku.
 
