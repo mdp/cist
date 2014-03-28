@@ -1,20 +1,21 @@
 {
   "name": "cist",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "curl to gist",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+    , "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "express": "~>3.1.1"
     , "request":"~>2.16.6"
   },
-  "repository": "",
+  "repository": "https://github.com/mdp/cist",
   "author": "m@mdp.im",
   "license": "MIT",
   "engines": {
-    "node": "0.8.x",
+    "node": "0.10.x",
     "npm": "1.2.x"
   }
 }
