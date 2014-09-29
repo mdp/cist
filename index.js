@@ -60,7 +60,7 @@ function saveFile(request, response) {
 }
 
 app.get('/', function(request, response) {
-  response.send('curl + gist = cist! Find out more at <a href="https://github.com/mdp/cist">mdp/cist on Github</a>');
+  response.send('curl + gist = cist!\n  Ex: curl -sT README.md cist.mdp.im \nFind out more at <a href="https://github.com/mdp/cist">mdp/cist on Github</a>\n');
 });
 
 app.post('*', saveFile);
