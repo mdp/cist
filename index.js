@@ -28,14 +28,12 @@ function createGist(content, fileName, callback) {
   json['files'][fileName] = {
     "content": content
   };
-  console.log(content);
   request.post(gistUrl(), {json:json, headers:headers}, function(err, res, body){
     callback(err, res, body);
   });
 }
 
 function saveFile(request, response) {
-  console.log(request.url)
   var fileName = request.url.match(/\/(.*)$/)[1]
 
   request.setEncoding('utf-8')
@@ -52,6 +50,7 @@ function saveFile(request, response) {
         console.log(body);
         response.send("Error creating gist: " + JSON.stringify(body));
       } else {
+        console.log(body['html_url']);
         response.setHeader('x-ratelimit-remaining', resp.headers['x-ratelimit-remaining']);
         response.send(body['html_url'] + "\n");
       }
