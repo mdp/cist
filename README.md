@@ -29,6 +29,16 @@ Curl the file you want to gist
 
 This will return a gist URL with a single file named 'index.js' with the contents of index.js
 
+### Using it from vi
+
+Send a selection to a gist
+
+`:'<,'>w !curl -sT - cist.mdp.im`
+
+Gist the entire file
+
+`:w !curl -sT - cist.mdp.im`
+
 ### Run your own 'cist' server
 
 It's designed to run on Heroku. Run it on Heroku.
